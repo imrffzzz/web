@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linktree - @imrff.zzz</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Welcome Overlay - Text only with blurred background -->
+    <div class="welcome-overlay" id="welcomeOverlay">
+        <div class="welcome-text">
+            <div class="welcome-icon">✨</div>
+            <h1 class="welcome-title">Hai!</h1>
+            <p class="welcome-message">Senang kamu ada di sini. Jelajahi koleksi dekorasi favorit saya yang siap memberikan nyawa baru pada ruanganmu. 🌿</p>
+            <p class="welcome-hint">Klik untuk masuk</p>
+        </div>
+    </div>
+
+    <!-- Login Overlay - Clickable text with welcome message -->
+    <div class="login-overlay" id="loginOverlay">
+        <div class="login-box" id="loginBox">
+            <p class="login-message">✨Hallo selamat datang di website imrff.zzz. Disini saya menjual produk dekorasi interior, dan dapat memberikan kesegaran baru yang mengubah suasana ruangan menjadi lebih harmoni. 🌿</p>
+            <p class="login-click-text" id="loginClickText">Klik untuk Masuk</p>
+        </div>
+    </div>
+
+    <!-- Aurora Background -->
+    <div class="aurora-container">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Profile Section -->
+        <div class="profile">
+            <div class="profile-image">
+                <img src="assets/foto pribadi.jpg.jpeg" alt="Profile">
+            </div>
+            <h1 class="username">@imrff.zzz</h1>
+            <p class="bio">✨ Digital Creator | Decoration Maker | Travel 🚀 </p>
+        </div>
+
+        <!-- Links Section -->
+        <div class="links">
+            <a href="https://www.instagram.com/official_trevia?igsh=MWY1NW1kYW85anZjaQ==" target="_blank" class="link-btn">
+                <i class="fab fa-instagram"></i>
+                <span>Instagram</span>
+                <i class="fas fa-external-link-alt"></i>
+            </a>
+            <a href="https://www.tiktok.com/@officialltrevia?_r=1&_t=ZS-94DOIEezhje" target="_blank" class="link-btn">
+                <i class="fab fa-tiktok"></i>
+                <span>TikTok</span>
+                <i class="fas fa-external-link-alt"></i>
+            </a>
+            <a href="https://youtube.com" target="_blank" class="link-btn">
+                <i class="fab fa-youtube"></i>
+                <span>YouTube</span>
+                <i class="fas fa-external-link-alt"></i>
+            </a>
+            <a href="https://lynk.id/trev_office" target="_blank" class="link-btn lynk-btn">
+                <img src="https://cdn.phototourl.com/uploads/2026-03-04-2675ec55-c28c-47fb-ad8f-f1690b19960e.png" alt="Lynk.id" class="lynk-logo-img">
+                <span>Lynk.id</span>
+                <i class="fas fa-external-link-alt"></i>
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p> privacy policy | <span class="heart"> © 2025 Trevia_Official. All Rights Reserved. </span> | About us </p>
+        </footer>
+    </div>
+
+</body>
+</html>
+
+<script>
+    // Check if user has already visited
+    if (localStorage.getItem('hasVisited')) {
+        document.getElementById('welcomeOverlay').style.display = 'none';
+    }
+
+    // Welcome Overlay click event
+    document.getElementById('welcomeOverlay').addEventListener('click', function() {
+        hideOverlay('welcomeOverlay');
+    });
+
+    // Login Box click event - when clicking the box, enter site
+    document.getElementById('loginBox').addEventListener('click', function() {
+        hideOverlay('loginOverlay');
+    });
+
+    // Login click text event
+    document.getElementById('loginClickText').addEventListener('click', function() {
+        hideOverlay('loginOverlay');
+    });
+
+    // Function to hide overlay
+    function hideOverlay(overlayId) {
+        var overlay = document.getElementById(overlayId);
+        if (overlay) {
+            overlay.style.opacity = '0';
+            overlay.style.transition = 'opacity 0.5s ease-out';
+            
+            setTimeout(function() {
+                overlay.style.display = 'none';
+                localStorage.setItem('hasVisited', 'true');
+            }, 500);
+        }
+    }
+
+    function enterSite() {
+        hideOverlay('welcomeOverlay');
+    }
+</script>
+
+
+   
